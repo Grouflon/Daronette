@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Unity.Netcode;
+using TMPro;
+using Unity.Netcode.Transports.UTP;
 
 public enum GameState
 {
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour
     public RectTransform waitingForConnectionScreen;
     public Button hostButton;
     public Button clientButton;
+    public TMP_InputField ipField;
     public ControllerDisplay controllerDisplay;
     public Transform player;
 
@@ -170,11 +173,14 @@ public class GameManager : MonoBehaviour
 
     void HostButton()
     {
+        //m_manager.GetComponent<UnityTransport>().ConnectionData.Address = "127.0.0.1";
+        m_manager.GetComponent<UnityTransport>().ConnectionData.Address = ipField.text;
         m_manager.StartHost();
     }
 
     void ClientButton()
     {
+        m_manager.GetComponent<UnityTransport>().ConnectionData.Address = ipField.text;
         m_manager.StartClient();
     }
 
