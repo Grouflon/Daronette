@@ -42,7 +42,7 @@ public class Friend : MonoBehaviour
             transform.localPosition = stickPosition;
 
             float alpha = 1.0f - Mathf.Clamp01((linearDistance - disappearStartDistance) / (disappearEndDistance - disappearStartDistance));
-            Debug.Log(alpha);
+            //Debug.Log(alpha);
             videoRenderer.material.SetFloat("_Alpha", alpha);
             if (alpha == 0.0f)
             {
