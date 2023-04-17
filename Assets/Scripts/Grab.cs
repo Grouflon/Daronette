@@ -78,17 +78,33 @@ public class Grab : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        grabPrompt.gameObject.SetActive(false);
+        if (grabPrompt != null)
+        {
+            grabPrompt.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         bool grabDown = Input.GetButtonDown("Grab");
-        float xInput = Input.GetAxis("Look X");
-        float yInput = Input.GetAxis("Look Y");
+        float factor = 50.0f;
+        float time = Time.deltaTime;
+        var input = new Vector2(Input.GetAxisRaw("Look X"), Input.GetAxisRaw("Look Y"));
+        var mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+        if (mouseInput.magnitude > 0.0f)
+        {
+            input = mouseInput;
+            factor = 1.0f;
+            time = 1.0f;
+        }
+        input *= factor;
+
         m_grabCandidate = null;
-        grabPrompt.gameObject.SetActive(false);
+        if (grabPrompt != null)
+        {
+            grabPrompt.gameObject.SetActive(false);
+        }
 
         if (m_grabbedObject == null)
         {
@@ -97,7 +113,10 @@ public class Grab : MonoBehaviour
             if (Physics.Raycast(ray, out hit, grabDistance, LayerMask.GetMask("Items"), QueryTriggerInteraction.Collide))
             {
                 m_grabCandidate = hit.collider.gameObject.transform;
-                grabPrompt.gameObject.SetActive(true);
+                if (grabPrompt != null)
+                {
+                    grabPrompt.gameObject.SetActive(true);
+                }
                 //Debug.Log(m_grabCandidate);
             }
             else
@@ -107,8 +126,8 @@ public class Grab : MonoBehaviour
         }
         else
         {
-            m_manualRotation = Quaternion.Euler(0.0f, xInput * rotationSpeed * Time.deltaTime, 0.0f) * m_manualRotation;
-            m_manualRotation = Quaternion.Euler(yInput * rotationSpeed * Time.deltaTime, 0.0f, 0.0f) * m_manualRotation;
+            m_manualRotation = Quaternion.Euler(0.0f, input.x * rotationSpeed * time, 0.0f) * m_manualRotation;
+            m_manualRotation = Quaternion.Euler(input.y * rotationSpeed * time, 0.0f, 0.0f) * m_manualRotation;
 
             float t = Mathf.Clamp01((Time.timeSinceLevelLoad - m_grabbedTime) / lerpTime);
             t = Ease.QuadOut(t);

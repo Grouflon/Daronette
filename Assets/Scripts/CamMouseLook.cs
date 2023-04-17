@@ -22,11 +22,30 @@ public class CamMouseLook : MonoBehaviour {
 
         if (!busy)
         {
+            float factor = 50.0f;
             var md = new Vector2(Input.GetAxisRaw("Look X"), Input.GetAxisRaw("Look Y"));
+            var moused = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+            float time = Time.deltaTime;
+            if (moused.magnitude > 0.0f)
+            {
+                factor = 1.0f;
+                time = 1.0f;
+                md = moused;
+            }
 
-            md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
-            smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smoothing);
-            smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
+            //md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing) * Time.deltaTime);
+            md = md * sensitivity * factor * time;
+            if (smoothing > 0.0f)
+            {
+                md = md * smoothing;
+                smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smoothing);
+                smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1f / smoothing);
+            }
+            else
+            {
+                smoothV = md;
+            }
+            
             mouseLook += smoothV;
             mouseLook.y = Mathf.Clamp(mouseLook.y, -90, 90);
 
