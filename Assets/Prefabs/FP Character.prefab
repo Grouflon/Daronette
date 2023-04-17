@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3972120868976564058}
   - component: {fileID: 3972120868976564033}
   - component: {fileID: 3972120868976564063}
+  - component: {fileID: 2803068554933586615}
   m_Layer: 6
   m_Name: FP Character
   m_TagString: Untagged
@@ -130,6 +131,19 @@ MonoBehaviour:
   crouchingJumpHeightDivider: 10
   state: 0
   moveSpeed: 0
+--- !u!114 &2803068554933586615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972120868976564056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6443e369ac54d974c83ec7cb980693cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabDistance: 10
 --- !u!1 &3972120869929262050
 GameObject:
   m_ObjectHideFlags: 0
