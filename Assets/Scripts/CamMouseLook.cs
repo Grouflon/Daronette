@@ -8,7 +8,7 @@ public class CamMouseLook : MonoBehaviour {
     Vector2 smoothV;
     public float sensitivity = 3;
     public float smoothing = 3;
-    bool busy = false;
+    public bool busy = false;
 
     GameObject character;
 

@@ -36,6 +36,7 @@ public class FPSPlayerController : MonoBehaviour
     public bool firstJumpGrounded = true;
     [Range(1F, 50F)]
     public float crouchingJumpHeightDivider = 10.0F;
+    public bool canMove = true;
 
 
     private float xInput;
@@ -77,10 +78,19 @@ public class FPSPlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!canMove)
+        {
+            xInput = 0.0f;
+            zInput = 0.0f;
+            move = Vector3.zero;
+            return;
+        }
+
         //GET THE DIRECTIONAL MOVES
         xInput = Input.GetAxis("Horizontal"); //get the "A" and "D" input
         zInput = Input.GetAxis("Vertical"); //get the "W" and "Z" input
         move = (transform.right * xInput + transform.forward * zInput); //save the inputs as a local transform
+        
 
         //JUMP CALLING
         if (Input.GetButtonDown("Jump"))
@@ -112,10 +122,12 @@ public class FPSPlayerController : MonoBehaviour
         }
 
         //EXIT FEATURE
+        /*
         if (Input.GetButton("Cancel"))
         {
             Application.Quit();
         }
+        */
     }
 
     void FixedUpdate()

@@ -123,12 +123,13 @@ MonoBehaviour:
   crouchTime: 0.1
   uncrouchTime: 0.1
   gravity: 20
-  coyoteTimeMax: 1
+  coyoteTimeMax: 0.01
   airControl: 0.6
   maxJumps: 1
   jumpHeight: 3
   firstJumpGrounded: 1
   crouchingJumpHeightDivider: 10
+  canMove: 1
   state: 0
   moveSpeed: 0
 --- !u!114 &2803068554933586615
@@ -144,10 +145,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabDistance: 10
-  grabbedSize: 2
+  grabbedSize: 1.5
   grabOffset: {x: 0, y: 0, z: 3}
-  rotationSpeed: 5
-  lerpTime: 0.3
+  rotationSpeed: 80
+  lerpTime: 0.15
 --- !u!1 &3972120869929262050
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 1
   smoothing: 1
+  busy: 0
 --- !u!20 &4727077883894637632
 Camera:
   m_ObjectHideFlags: 0
