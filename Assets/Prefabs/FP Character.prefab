@@ -117,16 +117,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29fa8ca824eac044bf913e85094192b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkingMoveSpeed: 6
-  sprintingMoveSpeed: 10
+  walkingMoveSpeed: 5
+  sprintingMoveSpeed: 8
   crouchingMoveSpeed: 1.5
   crouchTime: 0.1
   uncrouchTime: 0.1
   gravity: 20
-  coyoteTimeMax: 0.2
+  coyoteTimeMax: 1
   airControl: 0.6
   maxJumps: 1
-  jumpHeight: 4
+  jumpHeight: 3
   firstJumpGrounded: 1
   crouchingJumpHeightDivider: 10
   state: 0
@@ -144,6 +144,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grabDistance: 10
+  grabbedSize: 2
+  grabOffset: {x: 0, y: 0, z: 3}
+  rotationSpeed: 5
+  lerpTime: 0.3
 --- !u!1 &3972120869929262050
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,11 +157,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3972120869929262055}
-  - component: {fileID: 3972120869929262052}
   - component: {fileID: 3972120869929262053}
   - component: {fileID: 3972120869929262054}
   - component: {fileID: 8184280842045535013}
-  - component: {fileID: 1826614845987387392}
+  - component: {fileID: 4727077883894637632}
+  - component: {fileID: 6449382288024599119}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -180,7 +184,42 @@ Transform:
   m_Father: {fileID: 3972120868976564060}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &3972120869929262052
+--- !u!81 &3972120869929262053
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972120869929262050}
+  m_Enabled: 1
+--- !u!114 &3972120869929262054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972120869929262050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16de72d2d6d123f4293538e5509b8ab8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprintFieldOfView: 70
+--- !u!114 &8184280842045535013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3972120869929262050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82a84d506b4ffc94d8cc233f3475df1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 1
+  smoothing: 1
+--- !u!20 &4727077883894637632
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +247,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -223,42 +262,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &3972120869929262053
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3972120869929262050}
-  m_Enabled: 1
---- !u!114 &3972120869929262054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3972120869929262050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16de72d2d6d123f4293538e5509b8ab8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprintFieldOfView: 1
---- !u!114 &8184280842045535013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3972120869929262050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82a84d506b4ffc94d8cc233f3475df1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sensitivity: 3
-  smoothing: 1
---- !u!114 &1826614845987387392
+--- !u!114 &6449382288024599119
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
