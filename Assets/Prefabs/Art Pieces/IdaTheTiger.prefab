@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 435778833567735259}
   - component: {fileID: 5553833425642392222}
   - component: {fileID: 6513603455674218439}
-  - component: {fileID: 4863923349508230544}
-  m_Layer: 0
+  - component: {fileID: 3486229341347857041}
+  m_Layer: 8
   m_Name: IdaTheTiger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,17 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4863923349508230544
-MeshCollider:
+--- !u!65 &3486229341347857041
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5042047230124721530}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.220446e-16, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}

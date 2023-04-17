@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8654136129196642436}
-  m_Layer: 0
+  - component: {fileID: 5836915090611421773}
+  m_Layer: 8
   m_Name: EggBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5836915090611421773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6795394549879938939}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.15, y: 7.28, z: 22.99}
+  m_Center: {x: 0, y: 2.01, z: 0}
 --- !u!1001 &1927945677019162798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45,15 +59,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0ad0914d2509dc4491dec7ce8e8e6a7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -6.56
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0ad0914d2509dc4491dec7ce8e8e6a7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -21.04
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0ad0914d2509dc4491dec7ce8e8e6a7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 11.9
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c0ad0914d2509dc4491dec7ce8e8e6a7, type: 3}
       propertyPath: m_LocalRotation.w

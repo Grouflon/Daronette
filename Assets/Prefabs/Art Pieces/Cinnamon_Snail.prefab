@@ -373,7 +373,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1324180215172570165}
-  m_Layer: 0
+  - component: {fileID: 2835622255811029592}
+  m_Layer: 8
   m_Name: Cinnamon_Snail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,6 +397,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2835622255811029592
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3657793655012679550}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.16, y: 6.95, z: 4.91}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4562635760207612177
 GameObject:
   m_ObjectHideFlags: 0

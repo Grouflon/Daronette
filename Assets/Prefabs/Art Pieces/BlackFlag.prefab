@@ -372,7 +372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5271576226333138268}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: -2.76, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -504,7 +504,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5271576226659444382}
-  m_Layer: 0
+  - component: {fileID: 5057356057240230126}
+  m_Layer: 8
   m_Name: BlackFlag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -527,6 +528,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5057356057240230126
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5271576226659444383}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 6, z: 3.82}
+  m_Center: {x: 0, y: 0.29, z: 1.72}
 --- !u!1 &5271576226841910687
 GameObject:
   m_ObjectHideFlags: 0

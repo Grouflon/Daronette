@@ -90,7 +90,11 @@ public class Grab : MonoBehaviour
         bool grabDown = Input.GetButtonDown("Grab");
         float factor = 50.0f;
         float time = Time.deltaTime;
-        var input = new Vector2(Input.GetAxisRaw("Look X"), Input.GetAxisRaw("Look Y"));
+        var input = new Vector2(Input.GetAxis("Look X"), Input.GetAxis("Look Y"));
+        if (input.magnitude == 0.0f)
+        {
+            input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")) * 0.1f;
+        }
         var mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         if (mouseInput.magnitude > 0.0f)
         {

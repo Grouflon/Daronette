@@ -765,7 +765,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1008974901781557229}
-  m_Layer: 0
+  - component: {fileID: 5814724676043454794}
+  m_Layer: 8
   m_Name: Arcade_Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -788,6 +789,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5814724676043454794
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7119419093389506680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.02, y: 0.7, z: 1.58}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7595373519408171707
 GameObject:
   m_ObjectHideFlags: 0

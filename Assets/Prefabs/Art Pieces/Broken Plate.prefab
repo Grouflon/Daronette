@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8539893572666591340}
   - component: {fileID: 1768369045082932702}
-  m_Layer: 0
+  - component: {fileID: 6021650150132764571}
+  m_Layer: 8
   m_Name: Broken Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,6 +76,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6021650150132764571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5263085065261741431}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.34, y: 10.3, z: 9.09}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5201560672060303813
 PrefabInstance:
   m_ObjectHideFlags: 0
