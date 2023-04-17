@@ -22,7 +22,7 @@ public class CamMouseLook : MonoBehaviour {
 
         if (!busy)
         {
-            var md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+            var md = new Vector2(Input.GetAxisRaw("Look X"), Input.GetAxisRaw("Look Y"));
 
             md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
             smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1f / smoothing);
